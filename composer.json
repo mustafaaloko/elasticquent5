@@ -1,7 +1,7 @@
 {
-  "name": "aloko/elasticquent",
+  "name": "aloko/elasticquent5",
   "type": "library",
-  "description": "Access Elasticsearch types through Laravel eloquently",
+  "description": "Access Elasticsearch types through Laravel 5 eloquently",
   "keywords": [
     "elasticsearch",
     "laravel",
