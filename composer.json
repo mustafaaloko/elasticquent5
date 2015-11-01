@@ -5,9 +5,12 @@
   "keywords": [
     "elasticsearch",
     "laravel",
-    "eloquent"
+    "laravel 5",
+    "eloquent",
+    "elasticquent"
+    "elasticquent5",
   ],
-  "homepage": "https://github.com/mustafaaloko/elasticquent",
+  "homepage": "https://github.com/mustafaaloko/elasticquent5",
   "license": "MIT",
   "authors": [
     {
