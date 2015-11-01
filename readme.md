@@ -4,7 +4,7 @@
 
 _Elasticsearch for Eloquent Laravel 5 Models_
 
-**Note:**: Aloko\Elasticquent is a built on top of [adamfairholm/Elasticquent](https://github.com/adamfairholm/Elasticquent) which was built for Laravel 4.x. As the author of [that package](https://github.com/adamfairholm/Elasticquent), didn't merge the pull requests for changes to be compatible with Laravel 5. I decided to publish this one.
+**Note:** Aloko\Elasticquent is a built on top of [adamfairholm/Elasticquent](https://github.com/adamfairholm/Elasticquent) which was built for Laravel 4.x. As the author of [that package](https://github.com/adamfairholm/Elasticquent), didn't merge the pull requests for changes to be compatible with Laravel 5. I decided to publish this one.
 
 Elasticquent makes working with [Elasticsearch](http://www.elasticsearch.org/) and [Eloquent](http://laravel.com/docs/eloquent) models easier by mapping them to Elasticsearch types. You can use the default settings or define how Elasticsearch should index and search your Eloquent models right in the model.
 
@@ -303,3 +303,27 @@ class MyCollection extends \Illuminate\Database\Eloquent\Collection {
     use ElasticquentCollectionTrait;
 }
 ```
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) <Mustafa Ehsan>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
