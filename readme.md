@@ -1,7 +1,5 @@
 # Elasticquent - Laravel 5
 
-**Important Note:** Not ready yet for production use.
-
 _Elasticsearch for Eloquent Laravel 5 Models_
 
 **Note:** Aloko\Elasticquent is a built on top of [adamfairholm/Elasticquent](https://github.com/adamfairholm/Elasticquent) which was built for Laravel 4.x. As the author of [that package](https://github.com/adamfairholm/Elasticquent), didn't merge the pull requests for changes to be compatible with Laravel 5. I decided to publish this one.
