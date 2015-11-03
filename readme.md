@@ -2,7 +2,7 @@
 
 _Elasticsearch for Eloquent Laravel 5 Models_
 
-**Note:** Aloko\Elasticquent is a built on top of [adamfairholm/Elasticquent](https://github.com/adamfairholm/Elasticquent) which was built for Laravel 4.x. As the author of [that package](https://github.com/adamfairholm/Elasticquent), didn't merge the pull requests for changes to be compatible with Laravel 5. I decided to publish this one.
+**Note:** Aloko\Elasticquent5 is a built on top of [adamfairholm/Elasticquent](https://github.com/adamfairholm/Elasticquent) which was built for Laravel 4.x. As the author of [that package](https://github.com/adamfairholm/Elasticquent), didn't merge the pull requests for changes to be compatible with Laravel 5. I decided to publish this one.
 
 Elasticquent makes working with [Elasticsearch](http://www.elasticsearch.org/) and [Eloquent](http://laravel.com/docs/eloquent) models easier by mapping them to Elasticsearch types. You can use the default settings or define how Elasticsearch should index and search your Eloquent models right in the model.
 
