@@ -63,7 +63,7 @@ Before you start using Elasticquent, make sure you've installed [Elasticsearch](
 
 ### <a name="step1"></a>Step 1 - Installation
 
-    composer require aloko/elasticquent
+    composer require aloko/elasticquent5
 
 ### <a name="step2"></a>Step 2 - Adding the Service Provider
 
