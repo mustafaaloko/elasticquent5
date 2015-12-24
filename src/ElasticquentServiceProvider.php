@@ -15,7 +15,7 @@ class ElasticquentServiceProvider extends ServiceProvider
     {
         // Publish the config file to the config path
         $this->publishes([
-            __DIR__.'/../config/elasticquent.php' => config_path('elasticquent.php')
+            __DIR__.'/../config/elasticquent.php' => config_path('elasticquent.php'),
         ], 'config');
     }
 

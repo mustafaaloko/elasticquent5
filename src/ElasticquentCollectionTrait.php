@@ -1,7 +1,9 @@
-<?php namespace Aloko\Elasticquent;
+<?php
+
+namespace Aloko\Elasticquent;
 
 /**
- * Elasticquent Collection Trait
+ * Elasticquent Collection Trait.
  *
  * Elasticsearch functions that you
  * can run on collections of documents.
@@ -9,7 +11,7 @@
 trait ElasticquentCollectionTrait
 {
     /**
-     * Add To Index
+     * Add To Index.
      *
      * Add all documents in this collection to
      * to the Elasticsearch document index.
@@ -19,20 +21,19 @@ trait ElasticquentCollectionTrait
     public function addToIndex()
     {
         if ($this->isEmpty()) {
-            return null;
+            return;
         }
 
-        $params = array();
+        $params = [];
 
         foreach ($this->all() as $item) {
-
-            $params['body'][] = array(
-                'index' => array(
-                    '_id' => $item->getKey(),
-                    '_type' => $item->getTypeName(),
-                    '_index' => $item->getIndexName()
-                )
-            );
+            $params['body'][] = [
+                'index' => [
+                    '_id'    => $item->getKey(),
+                    '_type'  => $item->getTypeName(),
+                    '_index' => $item->getIndexName(),
+                ],
+            ];
 
             $params['body'][] = $item->getIndexDocumentData();
         }
@@ -41,7 +42,7 @@ trait ElasticquentCollectionTrait
     }
 
     /**
-     * Delete From Index
+     * Delete From Index.
      *
      * @return array
      */
@@ -49,24 +50,23 @@ trait ElasticquentCollectionTrait
     {
         $all = $this->all();
 
-        $params = array();
+        $params = [];
 
         foreach ($all as $item) {
-
-            $params['body'][] = array(
-                'delete' => array(
-                    '_id' => $item->getKey(),
-                    '_type' => $item->getTypeName(),
-                    '_index' => $item->getIndexName()
-                )
-            );
+            $params['body'][] = [
+                'delete' => [
+                    '_id'    => $item->getKey(),
+                    '_type'  => $item->getTypeName(),
+                    '_index' => $item->getIndexName(),
+                ],
+            ];
         }
 
         return $this->getElasticSearchClient()->bulk($params);
     }
 
     /**
-     * Reindex
+     * Reindex.
      *
      * Delete the items and then re-index them.
      *
@@ -75,17 +75,18 @@ trait ElasticquentCollectionTrait
     public function reindex()
     {
         $this->deleteFromIndex();
+
         return $this->addToIndex();
     }
 
     /**
-     * Get ElasticSearch Client
+     * Get ElasticSearch Client.
      *
      * @return \Elasticsearch\Client
      */
     public function getElasticSearchClient()
     {
-        $config = array();
+        $config = [];
 
         if (\Config::has('elasticquent.config')) {
             $config = \Config::get('elasticquent.config');
@@ -93,5 +94,4 @@ trait ElasticquentCollectionTrait
 
         return new \Elasticsearch\Client($config);
     }
-
 }

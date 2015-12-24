@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -16,7 +16,7 @@ return array(
     'config' => [
         'hosts'     => ['localhost:9200'],
         'logging'   => true,
-        'logPath'   => storage_path() . '/logs/elasticsearch.log',
+        'logPath'   => storage_path().'/logs/elasticsearch.log',
         'logLevel'  => Monolog\Logger::WARNING,
     ],
 
@@ -31,4 +31,4 @@ return array(
 
     'default_index' => 'default',
 
-);
+];
