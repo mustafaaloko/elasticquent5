@@ -1,8 +1,8 @@
-<?php namespace Aloko\Elasticquent;
+<?php
+
+namespace Aloko\Elasticquent;
 
 class ElasticquentCollection extends \Illuminate\Database\Eloquent\Collection
 {
-
     use ElasticquentCollectionTrait;
-
 }

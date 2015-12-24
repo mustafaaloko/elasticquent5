@@ -1,4 +1,6 @@
-<?php namespace Aloko\Elasticquent;
+<?php
+
+namespace Aloko\Elasticquent;
 
 class ElasticquentResultCollection extends \Illuminate\Database\Eloquent\Collection
 {
@@ -9,21 +11,22 @@ class ElasticquentResultCollection extends \Illuminate\Database\Eloquent\Collect
     protected $aggregations = null;
 
     /**
-     * _construct
+     * _construct.
      *
      * @param   $results elasticsearch results
      * @param $instance
+     *
      * @return \Aloko\Elasticquent\ElasticquentResultCollection
      */
     public function __construct($results, $instance)
     {
         // Take our result data and map it
         // to some class properties.
-        $this->took         = $results['took'];
-        $this->timed_out    = $results['timed_out'];
-        $this->shards       = $results['_shards'];
-        $this->hits         = $results['hits'];
-        $this->aggregations = isset($results['aggregations']) ? $results['aggregations'] : array();
+        $this->took = $results['took'];
+        $this->timed_out = $results['timed_out'];
+        $this->shards = $results['_shards'];
+        $this->hits = $results['hits'];
+        $this->aggregations = isset($results['aggregations']) ? $results['aggregations'] : [];
 
         // Now we need to assign our hits to the
         // items in the collection.
@@ -31,17 +34,17 @@ class ElasticquentResultCollection extends \Illuminate\Database\Eloquent\Collect
     }
 
     /**
-     * Hits To Items
+     * Hits To Items.
      *
-     * @param   Eloquent model instance $instance
-     * @return  array
+     * @param Eloquent model instance $instance
+     *
+     * @return array
      */
     private function hitsToItems($instance)
     {
-        $items = array();
+        $items = [];
 
         foreach ($this->hits['hits'] as $hit) {
-
             $items[] = $instance->newFromHitBuilder($hit);
         }
 
@@ -49,7 +52,7 @@ class ElasticquentResultCollection extends \Illuminate\Database\Eloquent\Collect
     }
 
     /**
-     * Total Hits
+     * Total Hits.
      *
      * @return int
      */
@@ -59,7 +62,7 @@ class ElasticquentResultCollection extends \Illuminate\Database\Eloquent\Collect
     }
 
     /**
-     * Max Score
+     * Max Score.
      *
      * @return float
      */
@@ -69,7 +72,7 @@ class ElasticquentResultCollection extends \Illuminate\Database\Eloquent\Collect
     }
 
     /**
-     * Get Shards
+     * Get Shards.
      *
      * @return array
      */
@@ -79,7 +82,7 @@ class ElasticquentResultCollection extends \Illuminate\Database\Eloquent\Collect
     }
 
     /**
-     * Took
+     * Took.
      *
      * @return string
      */
@@ -89,17 +92,17 @@ class ElasticquentResultCollection extends \Illuminate\Database\Eloquent\Collect
     }
 
     /**
-     * Timed Out
+     * Timed Out.
      *
      * @return bool
      */
     public function timedOut()
     {
-        return (bool)$this->timed_out;
+        return (bool) $this->timed_out;
     }
 
     /**
-     * Get Hits
+     * Get Hits.
      *
      * Get the raw hits array from
      * Elasticsearch results.
@@ -112,7 +115,7 @@ class ElasticquentResultCollection extends \Illuminate\Database\Eloquent\Collect
     }
 
     /**
-     * Get aggregations
+     * Get aggregations.
      *
      * Get the raw hits array from
      * Elasticsearch results.
@@ -123,5 +126,4 @@ class ElasticquentResultCollection extends \Illuminate\Database\Eloquent\Collect
     {
         return $this->aggregations;
     }
-
 }
